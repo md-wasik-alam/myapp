@@ -4,7 +4,7 @@ const connectDb = handler => async (req,res) => {
     if(mongoose.connection.readyState){
         return handler(req, res);
     }
-    await mongoose.connect(process.env.MONGO_URI)
+    await mongoose.connect(process.env.MONGODB_URI)
     return handler(req,res);
 }
 

@@ -9,10 +9,10 @@ const handler = async (req, res) => {
     }
     else if(req.method == "POST"){
         let data = new Player({
-            name:"Dhoni",
-            age:40,
-            no_of_matchs:300,
-            odi_rank : "1st",
+            name:req.body.name,
+            age:req.body.age,
+            no_of_matchs:req.body.nom,
+            odi_rank : req.body.rank,
         })
         await data.save()
         res.status(200).json({data})
